@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ignite2</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+    <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+      <div class="container">
+        <a class="navbar-brand" href="#">IGNITE</a>
+      </div><!-- end Container within Navbar --> 
+    </nav><!-- end Navbar --> 
+    
+    <%= yield %>  
+  </body>
+</html>
