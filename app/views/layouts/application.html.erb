@@ -9,13 +9,14 @@
   </head>
 
   <body>
+    <div class="container" id="main">
+      <nav class="navbar navbar-fixed-top navbar-light bg-faded">
+        <div class="container">
+          <a class="navbar-brand" href="#">IGNITE</a>
+        </div><!-- end Container within Navbar --> 
+      </nav><!-- end Navbar --> 
     
-    <nav class="navbar navbar-fixed-top navbar-light bg-faded">
-      <div class="container">
-        <a class="navbar-brand" href="#">IGNITE</a>
-      </div><!-- end Container within Navbar --> 
-    </nav><!-- end Navbar --> 
-    
-    <%= yield %>  
+      <%= yield %>
+    </div><!-- end main container -->
   </body>
 </html>
