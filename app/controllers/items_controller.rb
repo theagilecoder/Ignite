@@ -51,6 +51,12 @@ class ItemsController < ApplicationController
     end
   end
 
+  #Import from CSV feature
+  def import
+    Item.import(params[:file])
+    redirect_to root_path, notice: "Products imported."
+  end
+  
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
