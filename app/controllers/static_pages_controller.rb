@@ -4,4 +4,7 @@ class StaticPagesController < ApplicationController
   
   def import
   end
+  
+  def admin
+  end  
 end
