@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  szip: 1
+  dzip: 1
+  onelbs: 9.99
+  twolbs: 9.99
+  fivelbs: 9.99
+  tenlbs: 9.99
+
+two:
+  szip: 1
+  dzip: 1
+  onelbs: 9.99
+  twolbs: 9.99
+  fivelbs: 9.99
+  tenlbs: 9.99

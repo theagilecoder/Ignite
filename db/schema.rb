@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129032321) do
+ActiveRecord::Schema.define(version: 20161218162838) do
 
   create_table "items", force: :cascade do |t|
     t.integer  "skuid"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 20161129032321) do
     t.decimal  "weight"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "rates", force: :cascade do |t|
+    t.integer  "szip"
+    t.integer  "dzip"
+    t.decimal  "onelbs"
+    t.decimal  "twolbs"
+    t.decimal  "fivelbs"
+    t.decimal  "tenlbs"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

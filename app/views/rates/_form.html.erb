@@ -1,0 +1,47 @@
+<%= form_for(rate) do |f| %>
+  <% if rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rate.errors.count, "error") %> prohibited this rate from being saved:</h2>
+
+      <ul>
+      <% rate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :szip %>
+    <%= f.number_field :szip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dzip %>
+    <%= f.number_field :dzip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :onelbs %>
+    <%= f.text_field :onelbs %>
+  </div>
+
+  <div class="field">
+    <%= f.label :twolbs %>
+    <%= f.text_field :twolbs %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fivelbs %>
+    <%= f.text_field :fivelbs %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tenlbs %>
+    <%= f.text_field :tenlbs %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
