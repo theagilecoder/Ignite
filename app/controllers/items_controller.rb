@@ -4,7 +4,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    Rails.logger.debug("index.params=#{params}")
+    @items = Item.by_skuid(params[:skuid])
   end
 
   # GET /items/1
