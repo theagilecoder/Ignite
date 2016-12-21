@@ -5,7 +5,11 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     Rails.logger.debug("index.params=#{params}")
+    
+    @cost = Rate.where(szip: params[:szip], dzip: params[:dzip]).first.onelbs if params[:szip].present?
+    
     @items = Item.by_skuid(params[:skuid])
+    @items.each { |x| x.multiple = @cost }
   end
 
   # GET /items/1
