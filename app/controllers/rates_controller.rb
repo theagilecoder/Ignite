@@ -50,7 +50,13 @@ class RatesController < ApplicationController
       end
     end
   end
-
+  
+  #Import from CSV feature
+  def import
+    Rate.import(params[:file])
+    redirect_to rates_path, notice: "Rate card imported."
+  end
+  
   # DELETE /rates/1
   # DELETE /rates/1.json
   def destroy

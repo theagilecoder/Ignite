@@ -69,7 +69,7 @@ class ItemsController < ApplicationController
   #Import from CSV feature
   def import
     Item.import(params[:file])
-    redirect_to root_path, notice: "Products imported."
+    redirect_to items_path, notice: "Products imported."
   end
   
   # DELETE /items/1
