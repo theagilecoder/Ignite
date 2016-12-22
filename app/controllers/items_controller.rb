@@ -6,10 +6,20 @@ class ItemsController < ApplicationController
   def index
     Rails.logger.debug("index.params=#{params}")
     
-    @cost = Rate.where(szip: params[:szip], dzip: params[:dzip]).first.onelbs if params[:szip].present?
+    #Find rate for szip and dzip supplied
+    @cost1 = Rate.where(szip: params[:szip], dzip: params[:dzip]).first.onelbs if params[:szip].present?
     
+    #Find item by the skuid supplied
     @items = Item.by_skuid(params[:skuid])
-    @items.each { |x| x.multiple = @cost }
+    
+    #Calculate Shipping cost 
+    @shippingcost = (@cost1 * @items.first.weight) if params[:szip].present?
+    
+    #Determine profitability of Item based on shipping cost
+    @items.each { |x| x.profitable = @shippingcost < x.price ? "Yes" : "No"  if params[:szip].present?}
+    
+    #Suggest multiple for loss making items
+    @items.each { |x| x.multiple = @shippingcost > x.price ? (@shippingcost/x.price).ceil : "Null"  if params[:szip].present?}
   end
 
   # GET /items/1
