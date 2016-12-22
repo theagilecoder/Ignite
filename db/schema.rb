@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161221221824) do
+ActiveRecord::Schema.define(version: 20161222195840) do
 
   create_table "items", force: :cascade do |t|
     t.integer  "skuid"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20161221221824) do
     t.decimal  "tenlbs"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "state1"
+    t.string   "state2"
   end
 
 end

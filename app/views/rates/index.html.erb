@@ -9,11 +9,11 @@
     <thead>
       <tr>
         <th>Szip</th>
+        <th>State1</th>
         <th>Dzip</th>
+        <th>State2</th>
         <th>1lbs(in $)</th>
         <th>2lbs(in $)</th>
-        <th>5lbs(in $)</th>
-        <th>10lbs(in $)</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -22,11 +22,11 @@
       <% @rates.each do |rate| %>
         <tr>
           <td><%= rate.szip %></td>
+          <td><%= rate.state1 %></td>
           <td><%= rate.dzip %></td>
+          <td><%= rate.state2 %></td>
           <td><%= rate.onelbs %></td>
           <td><%= rate.twolbs %></td>
-          <td><%= rate.fivelbs %></td>
-          <td><%= rate.tenlbs %></td>
           <td><%= link_to 'Show', rate %></td>
           <td><%= link_to 'Edit', edit_rate_path(rate) %></td>
           <td><%= link_to 'Destroy', rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
