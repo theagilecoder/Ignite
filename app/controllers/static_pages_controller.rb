@@ -8,6 +8,9 @@ class StaticPagesController < ApplicationController
   def import2
   end
   
+  def import3
+  end
+  
   def admin
   end  
 end
